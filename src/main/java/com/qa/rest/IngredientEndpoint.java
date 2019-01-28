@@ -14,10 +14,10 @@ public class IngredientEndpoint {
 	@Inject
 	private IngredientService service;
 	
-	@Path("/get/{id}")
+	@Path("/get")
 	@GET
-	public String getIngredient(@PathParam("id") Long ingredientID) {
-		return service.getIngredient(ingredientID);
+	public String getIngredients() {
+		return service.getIngredients();
 	}
 	
 	@Path("/add")
