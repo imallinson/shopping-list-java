@@ -6,7 +6,7 @@ import com.qa.persistence.domain.Ingredient;
 
 public interface IngredientRepository {
 
-	List<Ingredient> getIngredients();
+	List<Ingredient> getIngredients(String username);
 
 	String addIngredient(Ingredient ingredient);
 

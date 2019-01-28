@@ -2,7 +2,7 @@ package com.qa.business.service;
 
 public interface IngredientService {
 
-	String getIngredients();
+	String getIngredients(String username);
 
 	String addIngredient(String ingredientJSON);
 

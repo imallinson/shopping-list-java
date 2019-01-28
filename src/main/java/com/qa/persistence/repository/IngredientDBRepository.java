@@ -4,6 +4,7 @@ import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
@@ -20,9 +21,10 @@ public class IngredientDBRepository implements IngredientRepository {
 	private EntityManager manager;
 	
 	@Override
-	public List<Ingredient> getIngredients() {
+	public List<Ingredient> getIngredients(String username) {
 		Query query = manager.createQuery("SELECT i FROM Ingredient i");
-		return query.getResultList();
+		List<Ingredient> ingredients = query.getResultList();
+		return ingredients.stream().filter(i -> i.getUsername().equals(username)).collect(Collectors.toList());
 	}
 
 	@Override
