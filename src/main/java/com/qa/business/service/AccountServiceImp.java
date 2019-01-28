@@ -25,4 +25,9 @@ public class AccountServiceImp implements AccountService {
 		return repo.createAccount(account);
 	}
 
+	@Override
+	public String clearList(String username) {
+		return repo.clearList(username);
+	}
+
 }

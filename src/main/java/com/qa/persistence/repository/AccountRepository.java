@@ -8,4 +8,6 @@ public interface AccountRepository {
 
 	String createAccount(Account account);
 
+	String clearList(String username);
+
 }

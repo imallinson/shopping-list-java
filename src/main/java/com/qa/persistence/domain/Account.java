@@ -12,7 +12,7 @@ public class Account {
 	@Id
 	private String username;
 	private String password;
-	@OneToMany(mappedBy="username", cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="username", cascade=CascadeType.ALL)
 	private List<Ingredient> shoppingList;
 	
 	public String getUsername() {

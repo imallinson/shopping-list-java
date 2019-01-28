@@ -6,4 +6,6 @@ public interface AccountService {
 
 	String createAccount(String accountJSON);
 
+	String clearList(String username);
+
 }
