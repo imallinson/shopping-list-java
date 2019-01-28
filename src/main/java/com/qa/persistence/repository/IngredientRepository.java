@@ -1,10 +1,12 @@
 package com.qa.persistence.repository;
 
+import java.util.List;
+
 import com.qa.persistence.domain.Ingredient;
 
 public interface IngredientRepository {
 
-	String getIngredients();
+	List<Ingredient> getIngredients();
 
 	String addIngredient(Ingredient ingredient);
 

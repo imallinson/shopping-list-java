@@ -15,7 +15,7 @@ public class IngredientServiceImp implements IngredientService {
 
 	@Override
 	public String getIngredients() {
-		return repo.getIngredients();
+		return util.getJSONForObject(repo.getIngredients());
 	}
 
 	@Override

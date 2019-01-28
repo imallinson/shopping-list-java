@@ -13,4 +13,26 @@ public class Ingredient {
 	private String ingredientName;
 	private Double amount;
 	private String measurement;
+	private String username;
+	
+	public Long getIngredientID() {
+		return ingredientID;
+	}
+	
+	public String getIngredientName() {
+		return ingredientName;
+	}
+	
+	public Double getAmount() {
+		return amount;
+	}
+	
+	public String getMeasurement() {
+		return measurement;
+	}
+
+	public String getUsername() {
+		return username;
+	}	
+	
 }

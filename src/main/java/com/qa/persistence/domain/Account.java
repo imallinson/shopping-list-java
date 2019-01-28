@@ -14,4 +14,17 @@ public class Account {
 	private String password;
 	@OneToMany(mappedBy="username", cascade=CascadeType.PERSIST)
 	private List<Ingredient> shoppingList;
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public List<Ingredient> getShoppingList() {
+		return shoppingList;
+	}
+	
 }
