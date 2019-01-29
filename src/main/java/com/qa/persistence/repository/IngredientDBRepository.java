@@ -1,17 +1,16 @@
 package com.qa.persistence.repository;
 
-import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.REQUIRED; 
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+import com.qa.persistence.domain.Account;
 import com.qa.persistence.domain.Ingredient;
 
 @Transactional(SUPPORTS)
@@ -22,9 +21,8 @@ public class IngredientDBRepository implements IngredientRepository {
 	
 	@Override
 	public List<Ingredient> getIngredients(String username) {
-		Query query = manager.createQuery("SELECT i FROM Ingredient i");
-		List<Ingredient> ingredients = query.getResultList();
-		return ingredients.stream().filter(i -> i.getUsername().equals(username)).collect(Collectors.toList());
+		Account account = findAccount(username);
+		return account.getShoppingList();
 	}
 
 	@Override
@@ -53,6 +51,10 @@ public class IngredientDBRepository implements IngredientRepository {
 	
 	public Ingredient findIngredient(Long ingredientID) {
 		return manager.find(Ingredient.class, ingredientID);
+	}
+	
+	public Account findAccount(String username) {
+		return manager.find(Account.class, username);
 	}
 
 }
