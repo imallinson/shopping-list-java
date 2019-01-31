@@ -1,1 +1,0 @@
-INSERT INTO Account (username, password) VALUES ('imallinson', 'password')
