@@ -27,9 +27,8 @@ public class AccountEndpoint {
 	}
 	
 	@Path("/clear/{username}")
-	@PUT
+	@DELETE
 	public String clearList(@PathParam("username") String username) {
 		return service.clearList(username);
 	}
-	
 }

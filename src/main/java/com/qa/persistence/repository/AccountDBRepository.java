@@ -43,6 +43,7 @@ public class AccountDBRepository implements AccountRepository {
 	}
 	
 	@Override
+	@Transactional(REQUIRED)
 	public String clearList(String username) {
 		Account accountInDB = findAccount(username);
 		accountInDB.getShoppingList().stream().forEach(i -> manager.remove(i));
