@@ -25,10 +25,7 @@ public class AccountDBRepository implements AccountRepository {
 	public String checkAccount(Account account) {
 		Account accountInDB = findAccount(account.getUsername());
 		if (accountInDB != null) {
-			if (account.getPassword().equals(accountInDB.getPassword())) {
-				return "{\"message\": \"logged in\"}";
-			}
-			return "{\"message\": \"incorect password\"}";
+			return "{\"message\": \"retrieved password\"}";			
 		}
 		return "{\"message\": \"account does not exist\"}";
 	}
