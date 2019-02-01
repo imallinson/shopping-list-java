@@ -22,12 +22,8 @@ public class AccountDBRepository implements AccountRepository {
 	private EntityManager manager;
 
 	@Override
-	public String checkAccount(Account account) {
-		Account accountInDB = findAccount(account.getUsername());
-		if (accountInDB != null) {
-			return "{\"message\": \"retrieved password\"}";			
-		}
-		return "{\"message\": \"account does not exist\"}";
+	public Account checkAccount(String username) {
+		return findAccount(username);
 	}
 
 	@Override

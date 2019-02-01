@@ -14,9 +14,8 @@ public class AccountServiceImp implements AccountService {
 	AccountRepository repo;
 
 	@Override
-	public String checkAccount(String accountJSON) {
-		Account account = util.getObjectForJSON(accountJSON, Account.class);
-		return repo.checkAccount(account);
+	public String checkAccount(String username) {
+		return util.getJSONForObject(repo.checkAccount(username));
 	}
 
 	@Override
