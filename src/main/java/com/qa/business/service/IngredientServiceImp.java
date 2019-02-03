@@ -1,11 +1,13 @@
 package com.qa.business.service;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qa.persistence.domain.Ingredient;
 import com.qa.persistence.repository.IngredientRepository;
 import com.qa.util.JSONUtil;
 
+@Default
 public class IngredientServiceImp implements IngredientService {
 	@Inject
 	JSONUtil util;

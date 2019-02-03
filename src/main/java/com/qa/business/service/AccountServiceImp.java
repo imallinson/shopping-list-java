@@ -1,11 +1,13 @@
 package com.qa.business.service;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qa.persistence.domain.Account;
 import com.qa.persistence.repository.AccountRepository;
 import com.qa.util.JSONUtil;
 
+@Default
 public class AccountServiceImp implements AccountService {
 	@Inject
 	JSONUtil util;
