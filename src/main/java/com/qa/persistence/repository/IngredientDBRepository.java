@@ -1,6 +1,6 @@
 package com.qa.persistence.repository;
 
-import static javax.transaction.Transactional.TxType.REQUIRED; 
+import static javax.transaction.Transactional.TxType.REQUIRED;  
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import java.util.List;
@@ -12,7 +12,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import com.qa.persistence.domain.Account;
 import com.qa.persistence.domain.Ingredient;
 
 @Transactional(SUPPORTS)

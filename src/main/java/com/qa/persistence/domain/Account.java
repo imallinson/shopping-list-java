@@ -1,6 +1,6 @@
 package com.qa.persistence.domain;
 
-import java.util.List;
+import java.util.List; 
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

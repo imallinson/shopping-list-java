@@ -7,4 +7,5 @@ bin
 .sonar_lock
 report-task.txt
 sonar-project.properties
+.scannerwork
 *.sh
